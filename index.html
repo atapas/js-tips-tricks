@@ -179,8 +179,30 @@
                 let project = new URLSearchParams(location.search).get('project');
             }
 
+            // 16. Tagged Template Literals
+            {
+                function introduce(strings, ...values) {                                                        
+                    let msg = 
+                    `<span style="color:${values[1]}">
+                        Hello ${values[0]}, Have a Nice Day!
+                    </span>`;
+                    
+                    return msg;
+                }
+
+                const name = 'Joe';
+                const color = 'green';
+
+                const message = introduce`Hello, I'm ${name} and ${color} is my favorite color!`;
+
+                console.log(message);
+                document.body.innerHTML = message;
+            }
+
         </script>
+        <br />
         <input type='number' onkeyup="trackChange(event)" />
+
     </body>
 
 </html>
