@@ -1,13 +1,13 @@
 
 <html>
     <head>
-        
-       
+        <title>JavaScript Tips & Trics</title>
     </head>
 
     <body>
       <h1>All is in the browser console. Open it up.</h1>
         <script>
+            const { log } = console;
             // 1. No Concatenation use Template string
             {
                 let name = 'Charlse';
@@ -17,10 +17,10 @@
                 }
 
                 let messageConcat = 'Mr. ' + name + ' is from ' + place + '. He is a' + ' ' + isPrime('P') + ' member.'
-                console.log(messageConcat);
+                log(messageConcat);
 
                 let messageTemplateStr = `Mr. ${name} is from ${place}. He is a ${isPrime('P')} member.`
-                console.log(messageTemplateStr);
+                log(messageTemplateStr);
             }
 
             // 2. isNumber
@@ -29,25 +29,25 @@
                 let mynumStr = "123";
                 let myNumFloat = 123.45;
 
-                console.log(`${mynum} is a number?`, Number.isInteger(mynum));
-                console.log(`${mynumStr} is a number?`, Number.isInteger(mynumStr));
-                console.log(`${myNumFloat} is a number?`, Number.isInteger(myNumFloat));
+                log(`${mynum} is a number?`, Number.isInteger(mynum));
+                log(`${mynumStr} is a number?`, Number.isInteger(mynumStr));
+                log(`${myNumFloat} is a number?`, Number.isInteger(myNumFloat));
             }
 
             // 3. Value as Number
             function trackChange(event) {
                 let value = event.target.value;
-                console.log(`is ${value} a number?`, Number.isInteger(value));
+                log(`is ${value} a number?`, Number.isInteger(value));
 
                 let valueAsNumber = event.target.valueAsNumber;
-                console.log(`is ${value} a number?`, Number.isInteger(valueAsNumber));
+                log(`is ${value} a number?`, Number.isInteger(valueAsNumber));
             }
 
             // 4. Short hand with AND
             {
                 let isPrime = true;
                 const startWatching = () => {
-                    console.log('Started Watching!');
+                    log('Started Watching!');
                 }
                 if (isPrime) {
                     startWatching();
@@ -60,19 +60,19 @@
             {
                 let person = {name: 'Jack'};
                 let age = person.age || 35;
-                console.log(`Age of ${person.name} is ${age}`);
+                log(`Age of ${person.name} is ${age}`);
             }
 
             // 6. Randoms
             {
                 let planets = ['Mercury ', 'Mars', 'Venus', 'Earth', 'Neptune', 'Uranus', 'Saturn', 'Jupiter'];
                 let randomPlanet = planets[Math.floor(Math.random() * planets.length)];
-                console.log('Random Planet', randomPlanet);
+                log('Random Planet', randomPlanet);
 
                 let getRandom = (min, max) => {
                     return Math.round(Math.random() * (max - min) + min);
                 }
-                console.log('Get random', getRandom(0, 10));
+                log('Get random', getRandom(0, 10));
             }
 
             // 7. Function default params
@@ -81,8 +81,8 @@
                     return `${message} ${name}`;
                 }
                 
-                console.log(greetings('Jack'));
-                console.log(greetings('Jack', 'Hola!'));
+                log(greetings('Jack'));
+                log(greetings('Jack', 'Hola!'));
             }
 
             // 8. Required Function Params
@@ -94,14 +94,14 @@
                 let greetings = (name=isRequired(), message='Hello,') => {
                     return `${message} ${name}`;
                 }
-                console.log(greetings('Jack'));
+                log(greetings('Jack'));
             }
 
             // 9. Comma Operator
             {
                 let count = 1;
                 let ret = (count++, count);
-                console.log(count);
+                log(count);
             }
 
             // 10. Merging multiple objects
@@ -120,9 +120,9 @@
 
                 // spread operator
                 let merged = {...emp, ...job};
-                console.log('Spread merged', merged);
+                log('Spread merged', merged);
 
-                console.log('Object assign', Object.assign({}, emp, job));
+                log('Object assign', Object.assign({}, emp, job));
 
                 // for deep merge use _merge of lodash
             }
@@ -132,11 +132,11 @@
                 // array
                 let emojis = ['🔥', '⏲️', '🏆', '🍉'];
                 let [fire, clock, , watermelon] = emojis;
-                console.log(fire, clock, watermelon);
+                log(fire, clock, watermelon);
 
                 let [f, ...rest] = emojis;
-                console.log(f);
-                console.log(rest);
+                log(f);
+                log(rest);
 
                 // object
                 let shape = {
@@ -147,8 +147,8 @@
                 };
 
                 let {name, sides, ...restObj} = shape;
-                console.log(name, sides);
-                console.log(restObj);
+                log(name, sides);
+                log(restObj);
             }
 
             // 12. Swap variables
@@ -157,15 +157,15 @@
                 let fruit = '🍉';
 
                 [fruit, fire] = [fire, fruit];
-                console.log(fire, fruit);
+                log(fire, fruit);
             }
 
             // 13. isArray
             {
                 let emojis = ['🔥', '⏲️', '🏆', '🍉'];
-                console.log(Array.isArray(emojis));
+                log(Array.isArray(emojis));
                 let obj = {};
-                console.log(Array.isArray(obj));
+                log(Array.isArray(obj));
             }
 
             // 14. undefined vs null
@@ -195,7 +195,7 @@
 
                 const message = introduce`Hello, I'm ${name} and ${color} is my favorite color!`;
 
-                console.log(message);
+                log(message);
                 document.body.innerHTML = message;
             }
 
