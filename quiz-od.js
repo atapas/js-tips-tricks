@@ -1,11 +1,11 @@
 /*
 
 Here is a Quiz for you. Please have a look at the `dark_theme` object below.
-Use the object destructuring, spread sytax and the rest parameter to achieve
-follwoings:
+Use the object destructuring, spread syntax and the rest parameter to achieve
+the following:
 
-1. Extract the value of the `font` property and assign it to variable.
-2. Extract the value of the `font` property and assign it to variable with the
+1. Extract the value of the `font` property and assign it to a variable.
+2. Extract the value of the `font` property and assign it to a variable with the
 name `myFont`.
 3. Extract the value of the button text color and link opacity.
 4. Create a clone of the dark_theme object and add the `border-color` attribute 
@@ -16,7 +16,7 @@ const user = {
     'id': 'U_001'
 }
 Merge the user object to the `dark_theme` object.
-6. Destructure the dark_theme object and put the link colors in a seprate object 
+6. Destructure the dark_theme object and put the link colors in a separate object 
 using the rest parameter.
 
 Feel free to fork the project and submit you answers by creating a file named,
