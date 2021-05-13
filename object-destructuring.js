@@ -1,4 +1,9 @@
 
+const log = {console};
+
+log("%c **** The Logs below are from the object-destructuring.js file ****", "color:#eb0fd9;font-size: 20px");
+
+
 // 1. Destructure and pick a property
 {
     const user = { 
